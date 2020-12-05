@@ -133,12 +133,12 @@ function processVideo() {
     const frame = getFrame();
     if (window.shouldTrack) {
         let res;
-        if (++frames % 120 == 0) { // reset tracking every 120 frames in case tracking gets lost
-            res = window.tracker.resetTracking(frame, width, height);
-        }
-        else {
+       // if (++frames % 120 == 0) { // reset tracking every 120 frames in case tracking gets lost
+          //  res = window.tracker.resetTracking(frame, width, height);
+     //   }
+     //   else {
             res = window.tracker.track(frame, width, height);
-        }
+      //  }
 
         if (res.valid) {
             window.tracker.transformElem(res.H, window.arElem);
